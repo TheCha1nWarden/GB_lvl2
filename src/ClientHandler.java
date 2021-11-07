@@ -86,7 +86,8 @@ public class ClientHandler {
     public void sendMsgTo(String nick, String msg) {
         for (ClientHandler c : myServer.getClients()) {
             if (c.name.equals(nick)) {
-                c.sendMsg(name + " : " + msg);
+                c.sendMsg(this.name + " : " + msg);
+                sendMsg("сообщение для " + nick + ": " + msg);
                 return;
             }
         }
